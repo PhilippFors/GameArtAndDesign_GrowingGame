@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Growing : MonoBehaviour
+public class Interact : MonoBehaviour
 {
     // Start is called before the first frame update
 
     [SerializeField] private Camera camera;
     [SerializeField] private string selectable = "Selectable";
-    private CharacterController charcontrol;
+    private Progress progress;
+    
     void Start()
     {
-        charcontrol = gameObject.GetComponent<CharacterController>();
+        progress = gameObject.GetComponent<Progress>();
     }
 
     // Update is called once per frame
@@ -26,8 +27,7 @@ public class Growing : MonoBehaviour
                 var selection = hit.transform;
                 if (selection.CompareTag(selectable))
                 {
-                    charcontrol.radius = 0.3f;
-                    charcontrol.height = 1.5f;
+                    progress.Growing();
                 }
             }
         }
