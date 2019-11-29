@@ -18,7 +18,7 @@ public class Progress : MonoBehaviour
         if (state.first)
         {
             charcontrol.transform.Translate(vec);
-            charcontrol.height = 1f;
+            charcontrol.height = 1.6f;
             state.first = false;
         }
     }
