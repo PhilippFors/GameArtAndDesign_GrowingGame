@@ -8,12 +8,6 @@ public class Interact : MonoBehaviour
 
     [SerializeField] private Camera camera;
     [SerializeField] private string selectable = "Selectable";
-    private GameManager progress;
-    
-    void Start()
-    {
-        progress = gameObject.GetComponent<GameManager>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -27,7 +21,7 @@ public class Interact : MonoBehaviour
                 var selection = hit.transform;
                 if (selection.CompareTag(selectable))
                 {
-                    progress.Growing();
+                    GameManager.Instance.Growing();
                 }
             }
         }
