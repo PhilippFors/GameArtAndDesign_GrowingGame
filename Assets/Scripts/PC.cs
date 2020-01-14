@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Computer : MonoBehaviour
+public class PC : MonoBehaviour
 {
     public Transform restPosition;
 
