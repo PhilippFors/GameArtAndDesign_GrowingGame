@@ -18,6 +18,7 @@ public class CollectableObject : MonoBehaviour, ILookAtHandler
 	public void OnLookatInteraction(Vector3 lookAtPosition, Vector3 lookAtDirection)
 	{
         //GameManager.instance.CollectObject(this.gameObject, previewSize);
+        GameManager.instance.ObjectCollected();
         GetComponent<AudioSource>().Play();
         GetComponent<Collider>().enabled = false;
         GetComponent<Renderer>().enabled = false;
