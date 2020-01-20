@@ -31,6 +31,12 @@ public class GameManager : MonoBehaviour
     {
         _instance = this;
     }
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
     private void Update()
     {
         ToyBoxDone();
