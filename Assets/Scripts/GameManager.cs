@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     public bool pyramidIn = false;
     public bool cubeIn = false;
 
-    public bool toyboxdone = false;
+    public bool toyBoxFilled = false;
+    public bool homeworkDone = false;
     //Singleton Setup
     //Call Methods or Variables with GameManager.Instance.Method()/Variable
     private static GameManager _instance;
@@ -39,8 +40,9 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        ToyBoxDone();
+        
     }
+
     public void Growing()
     {
         charcontrol.transform.Translate(vec);
@@ -49,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     public void SwitchScene()
     {
-        if (toyboxdone)
+        if (toyBoxFilled)
         {
             SceneManager.LoadScene("Level 2", LoadSceneMode.Single);
         }
@@ -59,7 +61,7 @@ public class GameManager : MonoBehaviour
     {
         if(pyramidIn & cubeIn & sphereIn)
         {
-            toyboxdone = true;
+            toyBoxFilled = true;
         }
     }
 }

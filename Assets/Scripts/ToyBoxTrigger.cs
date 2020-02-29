@@ -10,18 +10,17 @@ public class ToyBoxTrigger : MonoBehaviour
     [SerializeField] private GameObject cube;
     public Transform guide;
 
-    public SphereTrigger sphereCol;
-    public PyramidTrigger pyramidCol;
-    public CubeTrigger cubeCol;
+    public BoxTrigger boxCol;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name.Equals(sphere.name))
         {
-            if (sphereCol.triggered)
+            if (boxCol.sphereTriggered)
             {
                 GameManager.Instance.sphereIn = true;
                 sphere.SetActive(false);
+                GameManager.Instance.ToyBoxDone();
             } else
             {
              //sphere.GetComponent<Rigidbody>().useGravity = true;
@@ -33,10 +32,11 @@ public class ToyBoxTrigger : MonoBehaviour
         }
         if (other.gameObject.name.Equals(pyramid.name))
         {
-            if (pyramidCol.triggered)
+            if (boxCol.pyramidTriggered)
             {
                 GameManager.Instance.pyramidIn = true;
                 pyramid.SetActive(false);
+                GameManager.Instance.ToyBoxDone();
             }
             else
             {
@@ -49,10 +49,11 @@ public class ToyBoxTrigger : MonoBehaviour
         }
         if (other.gameObject.name.Equals(cube.name))
         {
-            if (cubeCol.triggered)
+            if (boxCol.cubeTriggered)
             {
                 GameManager.Instance.cubeIn = true;
                 cube.SetActive(false);
+                GameManager.Instance.ToyBoxDone();
             }
             else
             {
