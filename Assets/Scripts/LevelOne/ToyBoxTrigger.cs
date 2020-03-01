@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToyBoxTrigger : MonoBehaviour
+public class ToyBoxTrigger : MonoBehaviour, ILookAtHandler
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject sphere;
@@ -10,13 +10,15 @@ public class ToyBoxTrigger : MonoBehaviour
     [SerializeField] private GameObject cube;
     public Transform guide;
 
-    public BoxTrigger boxCol;
+    public BoxTrigger sphereCol;
+    public BoxTrigger cubeCol;
+    public BoxTrigger pyramidCol;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name.Equals(sphere.name))
         {
-            if (boxCol.sphereTriggered)
+            if (sphereCol.sphereTriggered)
             {
                 GameManager.Instance.sphereIn = true;
                 sphere.SetActive(false);
@@ -32,7 +34,7 @@ public class ToyBoxTrigger : MonoBehaviour
         }
         if (other.gameObject.name.Equals(pyramid.name))
         {
-            if (boxCol.pyramidTriggered)
+            if (pyramidCol.pyramidTriggered)
             {
                 GameManager.Instance.pyramidIn = true;
                 pyramid.SetActive(false);
@@ -49,7 +51,7 @@ public class ToyBoxTrigger : MonoBehaviour
         }
         if (other.gameObject.name.Equals(cube.name))
         {
-            if (boxCol.cubeTriggered)
+            if (cubeCol.cubeTriggered)
             {
                 GameManager.Instance.cubeIn = true;
                 cube.SetActive(false);
@@ -65,5 +67,20 @@ public class ToyBoxTrigger : MonoBehaviour
 
             }
         }
+    }
+
+    public void OnLookatEnter()
+    {
+        
+    }
+
+    public void OnLookatExit()
+    {
+        
+    }
+
+    public void OnLookatInteraction(Vector3 lookAtPosition, Vector3 lookAtDirection)
+    {
+       
     }
 }

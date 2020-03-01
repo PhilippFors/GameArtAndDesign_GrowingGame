@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     public bool toyBoxFilled = false;
     public bool homeworkDone = false;
+    public bool goooooooal = false;
     //Singleton Setup
     //Call Methods or Variables with GameManager.Instance.Method()/Variable
     private static GameManager _instance;
@@ -51,9 +52,13 @@ public class GameManager : MonoBehaviour
 
     public void SwitchScene()
     {
-        if (toyBoxFilled)
+        if (SceneManager.GetActiveScene().name.Equals("Level 1"))
         {
             SceneManager.LoadScene("Level 2", LoadSceneMode.Single);
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("Level 2"))
+        {
+            SceneManager.LoadScene("Level 3", LoadSceneMode.Single);
         }
     }
 

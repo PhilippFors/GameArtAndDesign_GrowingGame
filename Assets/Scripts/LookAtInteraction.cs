@@ -32,6 +32,7 @@ public class LookAtInteraction : MonoBehaviour
             {
                 if (lastLookAtObject == null) // if we start looking at a valid object
                 {
+                    
                     currentLookAtObject.OnLookatEnter();
                     lastLookAtObject = currentLookAtObject;
                 }
