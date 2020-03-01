@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
     public void AddToSubtitleQueue(string text, float interval = 5f)
     {
         StopCoroutine("PlaySubtitles");
+        CancelInvoke("DisableSubtitle");
         int i = 0;
         int j = 0;
         bool dup = false;

@@ -27,6 +27,7 @@ public class LookAtInteraction : MonoBehaviour
         {
             // See if we have hit an object that carries a ILookAtHandler component
             ILookAtHandler currentLookAtObject = rayCastHit.collider.GetComponent<ILookAtHandler>();
+            GameObject obj = rayCastHit.transform.gameObject;
 
             if (currentLookAtObject != null)
             {

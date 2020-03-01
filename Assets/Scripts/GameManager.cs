@@ -16,6 +16,14 @@ public class GameManager : MonoBehaviour
     public bool toyBoxFilled = false;
     public bool homeworkDone = false;
     public bool goooooooal = false;
+
+    public bool bedMade = false;
+    public bool trashCollected = false;
+    public bool playedGame = false;
+    public bool jobSearch = false;
+
+
+    public int currentLevel = 1;
     //Singleton Setup
     //Call Methods or Variables with GameManager.Instance.Method()/Variable
     private static GameManager _instance;
@@ -31,17 +39,27 @@ public class GameManager : MonoBehaviour
     }
     private void Awake()
     {
-        _instance = this;
+        if (Instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            _instance = this;
+        }
+        else if (_instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        homeworkDone = false;
     }
+
     private void Update()
     {
-        
+
     }
 
     public void Growing()
@@ -52,6 +70,7 @@ public class GameManager : MonoBehaviour
 
     public void SwitchScene()
     {
+        currentLevel++;
         if (SceneManager.GetActiveScene().name.Equals("Level 1"))
         {
             SceneManager.LoadScene("Level 2", LoadSceneMode.Single);
@@ -64,7 +83,7 @@ public class GameManager : MonoBehaviour
 
     public void ToyBoxDone()
     {
-        if(pyramidIn & cubeIn & sphereIn)
+        if (pyramidIn & cubeIn & sphereIn)
         {
             toyBoxFilled = true;
         }
