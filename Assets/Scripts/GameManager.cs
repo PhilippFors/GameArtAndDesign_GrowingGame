@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public bool playedGame = false;
     public bool jobSearch = false;
 
+    
 
     public int currentLevel = 1;
     //Singleton Setup
@@ -37,9 +38,10 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
+
     private void Awake()
     {
-        if (Instance == null)
+        if (_instance == null)
         {
             DontDestroyOnLoad(gameObject);
             _instance = this;
