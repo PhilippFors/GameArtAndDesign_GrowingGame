@@ -9,7 +9,7 @@ public class Homework : MonoBehaviour, ILookAtHandler
     {
         if (!GameManager.Instance.homeworkDone & GameManager.Instance.toyBoxFilled)
         {
-            UIManager.Instance.AddToSubtitleQueue("I don't want to do homework...", 5f);
+            UIManager.Instance.AddToSubtitleQueue("I don't want to do homework...", 4f);
             UIManager.Instance.AddToSubtitleQueue("But mum will yell at me if I don't do it");
         }
 

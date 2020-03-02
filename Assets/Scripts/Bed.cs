@@ -26,8 +26,17 @@ public class Bed : MonoBehaviour, ILookAtHandler
         {
             UIManager.Instance.AddToSubtitleQueue("Ugh, made the bed I guess.");
             GameManager.Instance.bedMade = true;
-            UIManager.Instance.AddToSubtitleQueue("Why do I need to pick up the trash too?", 6f);
-            UIManager.Instance.AddToSubtitleQueue("My room is fine the way it is.");
+            if (!GameManager.Instance.trashCollected)
+            {
+                UIManager.Instance.AddToSubtitleQueue("Why do I need to pick up the trash too?", 6f);
+                UIManager.Instance.AddToSubtitleQueue("My room is fine the way it is.");
+            }
+            else
+            {
+                UIManager.Instance.AddToSubtitleQueue("Chores are done.", 3f);
+                UIManager.Instance.AddToSubtitleQueue("Now it's PC time", 4f);
+            }
+
         }
     }
 

@@ -22,7 +22,8 @@ public class GameManager : MonoBehaviour
     public bool playedGame = false;
     public bool jobSearch = false;
 
-    
+    public Animator anim;
+
 
     public int currentLevel = 1;
     //Singleton Setup
@@ -41,44 +42,61 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            _instance = this;
-        }
-        else if (_instance != this)
-        {
-            Destroy(gameObject);
-        }
+
+        _instance = this;
+
     }
 
     private void Start()
     {
+        if (SceneManager.GetActiveScene().name.Equals("Level 1"))
+        {
+            currentLevel = 1;
+        }
+        if (SceneManager.GetActiveScene().name.Equals("Level 2"))
+        {
+            currentLevel = 2;
+        }
+
+        if (SceneManager.GetActiveScene().name.Equals("Level 3"))
+        {
+            currentLevel = 3;
+        }
+        PlayIntro();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         homeworkDone = false;
     }
 
-    private void Update()
+    void PlayIntro()
     {
-
+        
+        anim.Play("Intro");
     }
 
-    public void Growing()
+    void PlayOutro()
     {
-        charcontrol.transform.Translate(vec);
-        charcontrol.height = 1.6f;
+        anim.Play("Outro");
     }
+
 
     public void SwitchScene()
     {
-        currentLevel++;
+        StartCoroutine(NextScene());
+    }
+
+    public IEnumerator NextScene()
+    {
         if (SceneManager.GetActiveScene().name.Equals("Level 1"))
         {
+            PlayOutro();
+            yield return new WaitForSeconds(2f);
             SceneManager.LoadScene("Level 2", LoadSceneMode.Single);
         }
         else if (SceneManager.GetActiveScene().name.Equals("Level 2"))
         {
+            PlayOutro();
+            yield return new WaitForSeconds(2f);
             SceneManager.LoadScene("Level 3", LoadSceneMode.Single);
         }
     }
