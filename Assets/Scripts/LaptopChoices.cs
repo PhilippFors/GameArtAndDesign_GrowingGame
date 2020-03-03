@@ -32,7 +32,7 @@ public class LaptopChoices : MonoBehaviour
             }
         }
         if (GameManager.Instance.playedGame & GameManager.Instance.jobSearch & GameManager.Instance.homeworkDone){
-            Invoke("ShutPCdown", 1f);
+            Invoke("ShutPCdown", 2f);
         }
     }
 

@@ -49,7 +49,13 @@ public class GameManager : MonoBehaviour
         _instance = this;
 
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
     private void Start()
     {
         if (SceneManager.GetActiveScene().name.Equals("Level 1"))
@@ -92,12 +98,15 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name.Equals("Level 1"))
         {
+            yield return new WaitForSeconds(2f);
             PlayOutro();
             yield return new WaitForSeconds(2f);
             SceneManager.LoadScene("Level 2", LoadSceneMode.Single);
         }
         else if (SceneManager.GetActiveScene().name.Equals("Level 2"))
+
         {
+            yield return new WaitForSeconds(2f);
             PlayOutro();
             yield return new WaitForSeconds(2f);
             SceneManager.LoadScene("Level 3", LoadSceneMode.Single);
