@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    Vector3 positionBeforeEntering;
+    
     public GameObject fpscontroller;
-    public GameObject fpsCamera;
+    
     public GameObject laptopCamera;
     public BoxCollider boxCol;
 
@@ -46,7 +46,7 @@ public class CameraController : MonoBehaviour
         {
             fpscontroller.SetActive(true);
             laptopCamera.SetActive(false);
-            if (GameManager.Instance.playedGame & GameManager.Instance.jobSearch & GameManager.Instance.homeworkDone)
+            if (GameManager.Instance.playedGame & GameManager.Instance.jobSearch & GameManager.Instance.homeworkDone || GameManager.Instance.workDone)
             {
                 boxCol.enabled = false;
             }
@@ -55,4 +55,6 @@ public class CameraController : MonoBehaviour
             Cursor.visible = false;
         }
     }
+
+    
 }

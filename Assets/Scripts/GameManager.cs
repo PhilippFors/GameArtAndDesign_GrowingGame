@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     public bool trashCollected = false;
     public bool playedGame = false;
     public bool jobSearch = false;
+    public bool workDone = false;
+    public bool lookedAtBear = false;
+    public bool tookBear = false;
 
     public Animator anim;
 
