@@ -3,7 +3,13 @@ guid: 8152ec4caff371445a4d47df6bbfb6e8
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chair_polySurface1Mat
+    second: {fileID: 4362962105363994262, guid: 153e6168bda1a48f6a0e7c277d661122,
+      type: 3}
   materials:
     importMaterials: 1
     materialName: 0

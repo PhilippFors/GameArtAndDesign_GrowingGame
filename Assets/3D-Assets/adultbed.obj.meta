@@ -3,7 +3,65 @@ guid: 5be690fd70327024d9788bd800659800
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BackMat
+    second: {fileID: 662017678011688944, guid: d93149777ce1f4a4cb4d2851c8c64364, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BottomMat
+    second: {fileID: 662017678011688944, guid: d93149777ce1f4a4cb4d2851c8c64364, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeckeMat
+    second: {fileID: -2788602609398990562, guid: d93149777ce1f4a4cb4d2851c8c64364,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FrontMat
+    second: {fileID: 662017678011688944, guid: d93149777ce1f4a4cb4d2851c8c64364, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MatratzeMat
+    second: {fileID: 2100000, guid: ef1216aa37a0cc249a6a6f5abbd25665, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Polster1Mat
+    second: {fileID: 4362962105363994262, guid: 153e6168bda1a48f6a0e7c277d661122,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Polster2Mat
+    second: {fileID: 4362962105363994262, guid: 153e6168bda1a48f6a0e7c277d661122,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Polster3Mat
+    second: {fileID: 2100000, guid: f62b52b2d4b721742a0bc5c6b4db468d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Polster4Mat
+    second: {fileID: 2100000, guid: f62b52b2d4b721742a0bc5c6b4db468d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Side1Mat
+    second: {fileID: 662017678011688944, guid: d93149777ce1f4a4cb4d2851c8c64364, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Side2Mat
+    second: {fileID: 662017678011688944, guid: d93149777ce1f4a4cb4d2851c8c64364, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
