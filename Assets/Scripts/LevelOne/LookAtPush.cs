@@ -8,7 +8,7 @@ public class LookAtPush : MonoBehaviour, ILookAtHandler
 	public void OnLookatEnter()
 	{
 		
-        UIManager.Instance.AddToSubtitleQueue("The ball is lined up and looks ready.");
+        UIManager.Instance.ShowSubtitle("The ball is lined up and looks ready.", true);
 	}
 
 	public void OnLookatExit()

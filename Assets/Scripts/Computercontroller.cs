@@ -5,7 +5,8 @@ using UnityEngine;
 public class Computercontroller : MonoBehaviour
 {
     public GameObject fpscontroller;
-  
+    public AudioListener fpslistener;
+    public AudioListener otherlistener;
     public GameObject computerCamera;
     public BoxCollider boxCol;
 
@@ -25,7 +26,9 @@ public class Computercontroller : MonoBehaviour
     public void StopPC()
     {
         fpscontroller.SetActive(true);
+        fpslistener.enabled = true;
         computerCamera.SetActive(false);
+        otherlistener.enabled = false;
 
         boxCol.enabled = false;
 

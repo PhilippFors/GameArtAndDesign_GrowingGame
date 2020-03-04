@@ -44,7 +44,7 @@ public class PC : MonoBehaviour
             buttonText.text = text;
         }
 
-        if (i == 12)
+        if (i == 15)
         {
             GameManager.Instance.workDone = true;
             buttonText.text = "Work is done";

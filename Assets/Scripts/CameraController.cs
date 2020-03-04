@@ -6,7 +6,8 @@ public class CameraController : MonoBehaviour
 {
     
     public GameObject fpscontroller;
-    
+    public AudioListener fpslistener;
+    public AudioListener otherlistener;
     public GameObject laptopCamera;
     public BoxCollider boxCol;
 
@@ -38,13 +39,17 @@ public class CameraController : MonoBehaviour
         if (locked)
         {
             fpscontroller.SetActive(false);
+            fpslistener.enabled = false;
             laptopCamera.SetActive(true);
+            otherlistener.enabled = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
         else
         {
             fpscontroller.SetActive(true);
+            fpslistener.enabled = true;
+            otherlistener.enabled = false;
             laptopCamera.SetActive(false);
             if (GameManager.Instance.playedGame & GameManager.Instance.jobSearch & GameManager.Instance.homeworkDone || GameManager.Instance.workDone)
             {
