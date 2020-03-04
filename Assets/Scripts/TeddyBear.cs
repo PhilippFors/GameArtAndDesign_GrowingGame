@@ -45,6 +45,8 @@ public class TeddyBear : MonoBehaviour, ILookAtHandler
         {
             bear.enabled = false;
             GameManager.Instance.tookBear = true;
+            UIManager.Instance.AddToSubtitleQueue("Maybe the bear will calm down my kid.", 4f);
+            UIManager.Instance.AddToSubtitleQueue("I'll get out of my room for now");
         }
     }
 
